@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8">
+        <title>Rock_Paper_Scissors</title>
+    </head>
+    <body>
+        <script>
+            function getComputerChoice(){
+                myArray = ["rock", "paper", "scissors"];
+                return myArray[Math.floor(Math.random()*myArray.length)];
+            }
+            function playerSelect(){
+                ans = prompt("Rock paper or Scissors?");
+                return ans.toLowerCase();
+                
+            }
+            function play(choice_p, choice_c){
+                if(choice_p === "rock"){
+                    if(choice_c === "paper"){
+                        console.log("Loser");
+                    }
+                    else if(choice_c === "rock"){
+                        console.log("same");
+                    }
+                    else{
+                        console.log("Win");
+                    }
+                }
+                if(choice_p === "paper"){
+                    if(choice_c ==="paper"){
+                        console.log("same");
+                    }
+                    else if(choice_c === "rock"){
+                        console.log("Win");
+                    }
+                    else{
+                        console.log("Lose");
+                    }
+                }
+                if(choice_p === "scissors"){
+                    if(choice_c === "paper"){
+                        console.log("Win");
+                    }
+                    else if(choice_c === "rock"){
+                        console.log("Lose");
+                    }
+                    else{
+                        console.log("same");
+                    }
+                }
+
+            }
+            function game(){
+                p = 0;
+                c = 0;
+                for (i = 0; i<=5; i++){
+                    pS = playerSelect();
+                    cS = getComputerChoice();
+                    play(pS, cS);
+                    console.log(cS);
+                    console.log("round: " + i + " Player: " + p + 
+                    "    Computer: " + c);
+                }
+            }
+            game();
+            
+            
+            
+        </script>
+    </body>
+</html>
